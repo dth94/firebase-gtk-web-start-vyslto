@@ -1,0 +1,209 @@
+@media all and (min-width: 1200px) {
+  #app {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 960px) and (max-width: 1199px) {
+  #app {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 599px) {
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media all and (min-width: 600px) {
+  section {
+    clear: both;
+    display: block;
+  }
+  #event-details-container {
+    clear: none;
+  }
+  img {
+    width: 60%;
+    height: 300px;
+    float: left;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+hr {
+  clear: both;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+button {
+  margin-left: 0px !important;
+}
+
+section {
+  margin: 20px;
+}
+
+.col1 {
+  width: 24%;
+  display: inline-block;
+  margin-right: 0.5em;
+  float: left;
+}
+
+.col2 {
+  width: 48%;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.col3 {
+  width: 30%;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.col23 {
+  width: 49%;
+  display: inline-block;
+  margin-right: 0.5em;
+  float: left;
+}
+
+.material-icons {
+  padding-right: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/web-app-9dcb0.appspot.com/o/xJgr6i.jpg?alt=media&token=9f7b0bbe-d911-43bb-9d72-293888df232e");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.playh1 {
+  background: green;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1em;
+}
+
+label {
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#guestbook > p {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+input {
+  border-color: white;
+  width: 50%;
+  display: inline-block;
+  background: 0 0;
+  text-align: left;
+  color: inherit;
+  margin-right: 3em;
+  float: right;
+}
+
+.inputSmall {
+  display: inline;
+  width: 20%;
+  margin-left: 0.5em;
+  margin-right: 1.5em;
+  float: unset;
+}
+
+button.clicked {
+  background-color: rgb(60, 67, 154);
+  border-color: rgb(60, 67, 154);
+  color: white;
+  outline-color: rgb(60, 67, 154);
+}
+
+button,
+button.firebaseui-id-submit.mdl-button--raised.mdl-button--colored {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgb(57, 57, 57);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  color: rgb(57, 57, 57);
+  cursor: default;
+  display: inline-flex;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  justify-content: center;
+  margin: 8px 16px;
+  outline-color: rgb(57, 57, 57);
+  overflow: hidden;
+  padding: 0px 15px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+button.PlusMinus {
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  height: 1.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.play {
+  width: 100%;
+}
+
+th {
+  background-color: green;
+  border-color: green;
+  text-align: center;
+}
+
+#timer {
+  font-size: 5em;
+  text-align: center;
+}
+
+tr {
+  height: 2em;
+}

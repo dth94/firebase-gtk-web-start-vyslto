@@ -1,0 +1,275 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Poker - Web App</title>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:300,400,700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div id="app">
+    <section id="event-details-container">
+      <h1>Pokern</h1>
+      <button id="startRsvp">LOGIN</button>
+      <p><i class="material-icons">calendar_today</i> 26 Mai</p>
+      <p><i class="material-icons">location_city</i> Colors</p>
+    </section>
+
+    <section id="play-game">
+      <h1 class="playh1">Pokern</h1>
+      <!--Spalte Details links-->
+      <span class="col1">
+        <table class="play">
+          <thead>
+            <tr>
+              <th colspan="3">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spieler:</td>
+              <td id="player-in-game"></td>
+            </tr>
+            <tr>
+              <td>Buy-Ins:</td>
+              <td id="buyin-in-game"></td>
+              <td>
+                <button id="BIPlus" class="PlusMinus">+</button>
+                <button id="BIMinus" class="PlusMinus">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Add-Ins:</td>
+              <td id="addin-in-game"></td>
+              <td>
+                <button id="AIPlus" class="PlusMinus">+</button>
+                <button id="AIMinus" class="PlusMinus">-</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+
+      <!--Timer Blinderhöhung-->
+      <span class="col23">
+        <table class="play">
+          <thead>
+            <tr>
+              <th>Blinderhöhung in</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="timerIni">
+              <td id="timer"></td>
+            </tr>
+            <tr>
+              <td><button>Start</button><button>Stop</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+
+      <!--Spalte Gewinnsumme links-->
+      <span class="col1">
+        <table class="play">
+          <thead>
+            <tr>
+              <th colspan="2">Gewinnsumme</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Platz:</td>
+              <td id="platz-eins"></td>
+            </tr>
+            <tr>
+              <td>2. Platz:</td>
+              <td id="platz-zwei"></td>
+            </tr>
+            <tr>
+              <td>3. Platz:</td>
+              <td id="platz-drei"></td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
+    </section>
+
+    <hr />
+
+    <section id="firebaseui-auth-container"></section>
+
+    <!--Einstellungen bearbeiten-->
+    <section id="setting-container" style="display: none;">
+      <h2>Einstellungen</h2>
+      <form id="settings">
+        <span class="col2">
+          <label>Anzahl Spieler: </label>
+          <input type="text" id="players" />
+        </span>
+        <span class="col2">
+          <label>Betrag (CHF): </label>
+          <input type="text" id="cost" /> </span><br /></br>
+
+        <span class="col2">
+          <label>Buy-In (CHF) : </label>
+          <input type="text" id="costbuy" />
+        </span>
+        <span class="col2">
+          <label>Add-In (CHF) : </label>
+          <input type="text" id="costadd" /> </span><br />
+
+        <span class="col2">
+          <label>Blindstufen-Zeit : </label>
+          <input type="text" id="blindtime" />
+        </span>
+        </br>
+        <span class="col2">
+          <label>Pausen Interval : </label>
+          <input type="text" id="breakint" />
+        </span>
+        <span class="col2">
+          <label>Pausen Zeit : </label>
+          <input type="text" id="breaktime" />
+        </span>
+        <br />
+
+        <label>Jackpotverteilung:</label><br />
+        <span class="col3">
+          <label>1. Platz : </label>
+          <input type="text" id="first" />
+        </span>
+        <span class="col3">
+          <label>2. Platz : </label>
+          <input type="text" id="second" />
+        </span>
+        <span class="col3">
+          <label>3. Platz : </label>
+          <input type="text" id="third" /> </span><br />
+
+        <label>Blindsstufen:</label><br />
+        <span class="col3">
+          <label>1. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="1sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="1bb" /> </span><br />
+        <span class="col3">
+          <label>2. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="2sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="2bb" />
+        </span>
+        <span class="col3">
+          <label>3. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="3sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="3bb" />
+        </span>
+        <span class="col3">
+          <label>4. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="4sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="4bb" />
+        </span>
+        <span class="col3">
+          <label>5. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="5sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="5bb" />
+        </span>
+        <span class="col3">
+          <label>6. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="6sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="6bb" />
+        </span>
+        <span class="col3">
+          <label>7. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="7sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="7bb" />
+        </span>
+        <span class="col3">
+          <label>8. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="8sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="8bb" />
+        </span>
+        <span class="col3">
+          <label>9. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="9sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="9bb" />
+        </span>
+        <span class="col3">
+          <label>10. Stufe : </label>
+        </span>
+        <span class="col3">
+          <label>Small : </label>
+          <input type="text" id="10sb" />
+        </span>
+        <span class="col3">
+          <label>Big : </label>
+          <input type="text" id="10bb" />
+        </span>
+
+        <button type="submit">
+          <i class="material-icons">save</i>
+          <span>SPEICHERN</span>
+        </button>
+      </form>
+    </section>
+
+    <section id="setting-inputs"></section>
+
+    <button id="edit">Einstellungen anpassen</button>
+    <button id="run">Spiel starten</button>
+  </div>
+</body>
